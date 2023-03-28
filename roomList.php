@@ -34,7 +34,7 @@
       </a>
     </div>
 
-    <div class="grid grid-cols-3 mb-32 mx-64 mt-6 gap-y-8 gap-x-8">
+    <div class="grid grid-cols-3 mb-32 mx-64 mt-6 gap-y-8 gap-x-8 pb-16">
     <?php
       $con = mysqli_connect("localhost", "root", null, "db_bed_and_breakfast");
 
