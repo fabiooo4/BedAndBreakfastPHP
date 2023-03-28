@@ -50,7 +50,7 @@
           exit();
         }
 
-        $query = "SELECT nome, cognome, Descrizione, DataArrivo, DataPartenza FROM prenotazioni
+        $query = "SELECT id, Numero, Cliente, Codice, nome, cognome, Descrizione, DataArrivo, DataPartenza FROM prenotazioni
                     JOIN clienti ON prenotazioni.Cliente = clienti.codice
                     JOIN camere ON prenotazioni.Camera = camere.Numero";
         $result = mysqli_query($con, $query);
@@ -68,17 +68,24 @@
                 <th>Room</th>
                 <th>Arrival Date</th>
                 <th>Departure Date</th>
+                <th>Edit</th>
               </tr>
             </thead>
             <tbody>";
 
         while ($row = mysqli_fetch_array($result)) {
-          echo "<tr>";
           echo "<td>" . $row['cognome'] . "</td>";
           echo "<td>" . $row['nome'] . "</td>";
           echo "<td>" . $row['Descrizione'] . "</td>";
           echo "<td>" . $row['DataArrivo'] . "</td>";
           echo "<td>" . $row['DataPartenza'] . "</td>";
+          echo "<td>
+                  <a href='editReservation.php?id=" . $row['id'] . "' class='text-base-content'>
+                    <span class='material-symbols-outlined'>
+                      edit
+                    </span>
+                  </a>
+                </td>";
           echo "</tr>";
         }
 

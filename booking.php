@@ -28,7 +28,7 @@
 
       <a href="roomList.php">
         <button class="btn btn-secondary w-28 justify-between">Back <span class="material-symbols-outlined">
-            backspace
+            undo
           </span>
         </button>
       </a>
