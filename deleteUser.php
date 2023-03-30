@@ -54,9 +54,7 @@
           if (isset($_POST['delete'])) {
             if (isset($_POST["checkbox"])) {
               foreach ($_POST["checkbox"] as $id) {
-                $delStay = "DELETE FROM soggiorni WHERE Prenotazione='$id'";
                 $delReservation = "DELETE FROM prenotazioni WHERE id='$id'";
-                $resultStay = mysqli_query($con, $delStay);
                 $resultReservation = mysqli_query($con, $delReservation);
               }
               if ($resultStay && $resultReservation) {
@@ -82,7 +80,9 @@
               <?php
               $userId = $_SESSION['codice'];
               $con = mysqli_connect("localhost", "root", null, "db_bed_and_breakfast");
-              $fqn = "SELECT * FROM prenotazioni WHERE Cliente = '$userId' ORDER BY Cliente";
+              $fqn = "SELECT * FROM prenotazioni
+                        JOIN camere ON prenotazioni.Camera = camere.Numero
+                        WHERE Cliente = '$userId' ORDER BY Cliente";
               $fqn_run = mysqli_query($con, $fqn);
 
               while ($row = mysqli_fetch_array($fqn_run)) :
@@ -91,7 +91,7 @@
             <tbody>
               <tr>
                 <td class="check"><input class="checkbox" name="checkbox[]" type="checkbox" value="<?php echo $row["id"]; ?>"></td>
-                <td><?php echo $row['Camera']; ?></td>
+                <td><?php echo $row['Descrizione']; ?></td>
                 <td><?php echo $row['DataArrivo']; ?></td>
                 <td><?php echo $row['DataPartenza']; ?></td>
               </tr><?php endwhile; ?>

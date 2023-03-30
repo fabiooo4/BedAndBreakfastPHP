@@ -35,7 +35,7 @@
     </div>
 
     <div class="grid grid-cols-3 mb-32 mx-64 mt-6 gap-y-8 gap-x-8 pb-16">
-    <?php
+      <?php
       $con = mysqli_connect("localhost", "root", null, "db_bed_and_breakfast");
 
       // Connection check
@@ -55,9 +55,9 @@
             <h2 class='card-title'>" . $row['Descrizione'] . "</h2>
             <p>Available slots: " . $row['Posti'] . "</p>
             <div class='card-actions justify-end'>
-              <button class='btn btn-primary'>
-                <a href='booking.php?room=" . $row['Numero'] . "'>Book</a>
-              </button>
+              <a href='booking.php?room=" . $row['Numero'] . "'>
+                <button class='btn btn-primary'>Book</button>
+              </a>
             </div>
           </div>
         </div>
@@ -65,7 +65,7 @@
       }
 
       mysqli_close($con);
-    ?>
+      ?>
 
     </div>
   </div>
