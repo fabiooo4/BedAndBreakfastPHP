@@ -44,7 +44,6 @@ CREATE TABLE
 
 INSERT INTO
     `clienti`(
-        `Codice`,
         `Cognome`,
         `Nome`,
         `Indirizzo`,
@@ -52,7 +51,6 @@ INSERT INTO
         `Email`
     )
 VALUES (
-        "1",
         "Bottari",
         "Barbara",
         "Via Moretto 13",
@@ -62,7 +60,6 @@ VALUES (
 
 INSERT INTO
     `clienti`(
-        `Codice`,
         `Cognome`,
         `Nome`,
         `Indirizzo`,
@@ -70,7 +67,6 @@ INSERT INTO
         `Email`
     )
 VALUES (
-        "2",
         "Tobia",
         "Donato",
         "Via del Risorgimento 12",
@@ -80,7 +76,6 @@ VALUES (
 
 INSERT INTO
     `clienti`(
-        `Codice`,
         `Cognome`,
         `Nome`,
         `Indirizzo`,
@@ -88,7 +83,6 @@ INSERT INTO
         `Email`
     )
 VALUES (
-        "3",
         "Baudo",
         "Giuseppe",
         "Via del Mare 77",
@@ -98,11 +92,11 @@ VALUES (
 
 INSERT INTO
     `camere`(
-        `Numero`,
         `Descrizione`,
-        `Posti`
+        `Posti`,
+        `Occupato`
     )
-VALUES (1, "Ciclamini", 3), (2, "Rose", 2), (3, "Girasoli", 4), (4, "Peonie", 2);
+VALUES ("Ciclamini", 3, 0), ("Rose", 2, 0), ("Girasoli", 4, 0), ("Peonie", 2, 0);
 
 INSERT INTO
     `prenotazioni`(
@@ -110,43 +104,30 @@ INSERT INTO
         `Cliente`,
         `Camera`,
         `DataArrivo`,
-        `DataPartenza`,
-        `Disdetta`
+        `DataPartenza`
     )
 VALUES (
         1,
-        "1",
+        1,
         1,
         "2021-07-15",
-        "2021-07-31",
-        0
+        "2021-07-31"
     ), (
         2,
-        "2",
+        2,
         2,
         "2021-07-01",
-        "2021-07-31",
-        0
+        "2021-07-31"
     ), (
         3,
-        "3",
+        3,
         3,
         "2021-06-25",
-        "2021-07-25",
-        0
+        "2021-07-25"
     ), (
         4,
-        "1",
+        1,
         1,
         "2021-12-01",
-        "2021-12-31",
-        0
+        "2021-12-31"
     );
-
-INSERT INTO
-    `soggiorni`(
-        `Prenotazione`,
-        `Cliente`,
-        `Documento`
-    )
-VALUES (1, 1, "CI"), (2, 2, "Patente"), (3, 1, "CI"), (4, 3, "Passaporto");

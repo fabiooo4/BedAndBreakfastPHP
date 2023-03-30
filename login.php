@@ -53,25 +53,32 @@
 
     <div class="flex flex-col items-center justify-center h-full mb-48">
 
+
       <div class="flex flex-col gap-y-2 bg-primary rounded-lg p-8 items-center">
         <h1 class="text-5xl text-primary-content font-extrabold text-center mb-8">
           Login
         </h1>
-        <!-- Username and email -->
-        <form action="login.php" method="post">
-          <div class="flex flex-col gap-y-2 items-center text-primary-content">
-            <label for="username" class="font-bold">Username (Surname Name)</label>
-            <input type="text" name="username" id="username" placeholder="Username" required class="input bg-base-content text-base-100">
-            <label for="email" class="font-bold">Email</label>
-            <input type="text" name="email" id="email" placeholder="Email" required class="input bg-base-content text-base-100">
-            <div class="flex w-full justify-end">
-              <button type="submit" class="btn btn-secondary btn-outline text-primary-content focus:text-base-content hover:text-base-content mt-4 w-1/2 px-4 justify-between">Login <span class="material-symbols-outlined">
-                  person
-                </span>
-              </button>
+
+        <div class="flex relative">
+          <form action="login.php" method="post">
+            <div class="flex flex-col gap-y-2 items-center text-primary-content">
+              <label for="username" class="font-bold">Username (Surname Name)</label>
+              <input type="text" name="username" id="username" placeholder="Username" required class="input bg-base-content text-base-100">
+              <label for="email" class="font-bold">Email</label>
+              <input type="text" name="email" id="email" placeholder="Email" required class="input bg-base-content text-base-100">
+              <div class="flex w-full justify-end items-center">
+
+                <button type="submit" class="btn btn-secondary btn-outline text-primary-content focus:text-base-content hover:text-base-content ml-1 mt-4 w-1/2 px-4 justify-between">Login <span class="material-symbols-outlined">
+                    person
+                  </span>
+                </button>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+          <a href="register.php" class="absolute left-0 bottom-0">
+            <button class="btn btn-accent btn-ghost text-primary-content mt-4 mr-1">Register</button>
+          </a>
+        </div>
       </div>
     </div>
   </div>
